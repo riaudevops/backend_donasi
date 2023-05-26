@@ -4,8 +4,8 @@ include 'connection.php';
 $conn = getConnection();
 
 try {
-    if (isset($_POST["id"])) {
-        $id = $_POST["id"];
+    if (isset($_GET["id"])) {
+        $id = $_GET["id"];
 
         $statement = $conn->prepare("SELECT * FROM detail_donasi WHERE id = :id;");
         $statement->bindParam(':id', $id);
