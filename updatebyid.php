@@ -20,16 +20,18 @@ try {
         if($result){
 
             if(isset($_FILES['keterangan']['name'])){
-                $image_name = $_FILES['bukti']['name'];
+                $image_name = $_FILES['keterangan']['name'];
                 $extension_file = ["jpg", "png", "jpeg"];
                 $extension = pathinfo($image_name, PATHINFO_EXTENSION);
 
                 if (in_array($extension, $extension_file)){
                     $upload_path = 'upload/' . $image_name;
 
-                    if(move_uploaded_file($_FILES['bukti']['tmp_name'], $upload_path)){
+                    if(move_uploaded_file($_FILES['keterangan']['tmp_name'], $upload_path)){
                         $message = "berhasil";
-                        $image = "http://localhost/donasi/".$upload_path;
+                        $keterangan = "https://lutproject.my.id/donasi/".$upload_path;
+                      
+                      	echo $image;
 
                         $statement = $conn->prepare("UPDATE detail_donasi SET nama = :nama, jumlah = :jumlah, tanggal = :tanggal, nomor_hp = :nomor_hp, keterangan = :keterangan, UPDATED_AT = now() WHERE id = :id");
 
