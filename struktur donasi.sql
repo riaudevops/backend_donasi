@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 26, 2023 at 07:18 AM
--- Server version: 10.6.13-MariaDB
--- PHP Version: 7.2.30
+-- Generation Time: May 26, 2023 at 04:30 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `lutproje_donasi`
+-- Database: `donasi_web`
 --
 
 -- --------------------------------------------------------
@@ -33,7 +33,7 @@ CREATE TABLE `detail_donasi` (
   `jumlah` varchar(12) NOT NULL,
   `tanggal` date NOT NULL,
   `nomor_hp` varchar(15) NOT NULL,
-  `keterangan` text DEFAULT NULL,
+  `keterangan` text NOT NULL,
   `CREATED_AT` timestamp NOT NULL DEFAULT current_timestamp(),
   `UPDATED_AT` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -43,8 +43,7 @@ CREATE TABLE `detail_donasi` (
 --
 
 INSERT INTO `detail_donasi` (`id`, `nama`, `jumlah`, `tanggal`, `nomor_hp`, `keterangan`, `CREATED_AT`, `UPDATED_AT`) VALUES
-(1, 'lutfi', '50000', '2023-10-11', '080x808080', NULL, '2023-05-26 00:17:51', '2023-05-26 00:17:54'),
-(2, 'lutfi', '50000', '2023-10-11', '080x808080', 'http://localhost/donasi/upload/rdologo.png', '2023-05-26 00:17:51', '2023-05-26 00:17:51');
+(3, 'lutfi', '50000', '2023-10-11', '080x808080', 'http://localhost/donasi/upload/dd762a2b-b0a2-462e-bd38-70df4e565b22.jpeg', '2023-05-26 14:19:35', '2023-05-26 14:19:35');
 
 -- --------------------------------------------------------
 
@@ -64,7 +63,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `nama`) VALUES
-(1, 'ajineo', '21232f297a57a5a743894a0e4a801fc3', 'aji');
+(1, 'fulan1', '21232f297a57a5a743894a0e4a801fc3', 'fulan');
 
 --
 -- Indexes for dumped tables
@@ -90,7 +89,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `detail_donasi`
 --
 ALTER TABLE `detail_donasi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user`
