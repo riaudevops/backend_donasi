@@ -10,9 +10,9 @@ try {
     $statement->bindParam(':id', $id);
     $statement->execute();
     $statement->setFetchMode(PDO::FETCH_OBJ);
+    $result = $statement->fetch();
 
     if($result){
-        $result = $statement->fetch();
         echo json_encode($result, JSON_PRETTY_PRINT);
     } else {
         http_response_code(404);
